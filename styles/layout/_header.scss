@@ -1,0 +1,30 @@
+.header{
+    max-width: 100%;
+    max-height: pxArem(100);
+    color: white;
+    .header__nav{
+        padding: pxArem(12);
+        background: rgb(6, 1, 43);
+        @include flex(row);
+        justify-content: space-between;
+        #navlogo{
+            width: pxArem(51);
+            height: pxArem(45);
+            position: relative;
+            left: pxArem(24);
+        }
+        #navlogo:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: transform ease-in 0.2s;
+        }
+        #navmenu{
+            list-style: none;
+            @include flex(row);
+            justify-content: space-evenly;
+            gap: pxArem(24);
+            position: relative;
+            right: pxArem(24);
+        }
+    }
+}
