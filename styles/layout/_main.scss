@@ -1,0 +1,39 @@
+main{
+    .main__container{
+        @include flex(column-reverse);
+        justify-content: center;
+        align-items: center;
+        span{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .sneakers{
+        @include flex();
+        flex-wrap: wrap;
+        align-items: center;
+        .sneaker{
+            background: trnasparent;
+            text-align: center;
+            cursor: pointer;
+            min-width: pxArem(310);
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease-out;
+            figcaption{
+                padding: 1rem;
+            }
+        }
+        .sneaker:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    .sneakers > * {
+        flex: 1 1;
+    }
+
+    
+
+}
