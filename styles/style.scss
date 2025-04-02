@@ -13,4 +13,13 @@
     box-sizing: border-box;
     background: rgb(6, 1, 43);
     max-height: 100vh;
+    text-align: center;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+
+ img{
+   max-width: pxArem(250);
+   max-height: pxArem(150);
+   margin-top: pxArem(10);
  }

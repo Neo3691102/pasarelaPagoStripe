@@ -31,10 +31,33 @@
   right: 1.5rem;
 }
 
+main .main__container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+main .main__container span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+main .sneakers {
+  @incl;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background: rgb(6, 1, 43);
   max-height: 100vh;
+  text-align: center;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+img {
+  max-width: 15.625rem;
+  max-height: 9.375rem;
+  margin-top: 0.625rem;
 }/*# sourceMappingURL=style.css.map */
