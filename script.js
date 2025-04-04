@@ -5,6 +5,7 @@ const $sneakers = $d.getElementById("sneakers");
 const $template = $d.getElementById("sneaker-template");
 const $fragmento = $d.createDocumentFragment();
 const $options = { headers: { Authorization: `Bearer ${KEYS.secret}` } };
+const formatoDeMoneda = num => `$ ${num.slice(0,-2)}.${num.slice(-2)}`;
 
 let products, prices;
 
@@ -24,7 +25,7 @@ Promise.all([
         $template.querySelector("sneaker").setAttribute("data-price", el.id);
         $template.querySelector("img").setAttribute.src = productData[0].images[0];
         $template.querySelector("img").alt = productData[0].name;
-        $template.querySelector("figcaption").innerHTML = `${productData[0].name} ${el.unit_amount_decimal} ${el.currency}`;
+        $template.querySelector("figcaption").innerHTML = `${productData[0].name} ${formatoDeMoneda(el.unit_amount_decimal)} ${(el.currency).toUpperCase()}`;
 
         let $clone = $d.importNode($template, true);
 
@@ -32,4 +33,30 @@ Promise.all([
     });
 
     $sneakers.appendChild($fragmento);
+})
+.catch(error => {
+  let message = error.statusText || "Ocurrio un error en la peticion";
+
+  $sneakers.innerHTML = `Error: ${error.status}: ${message}`;
+})
+
+$d.addEventListener("click" , e => {
+  if (e.target.matches(".sneakers *")){
+    let priceId = e.target.parentElement.getAttribute("data-price");
+
+    Stripe(KEYS.public).redirectToCheckout({
+      lineItems: [{ 
+        price: priceId, 
+        quantity: 1
+        }],
+        mode: "subscription",
+        successUrl: "", //direccion local
+        cancelUrl: ""
+    })
+    .then(res => {
+      if (res.error) {
+        $sneakers.insertAdjacentElement("afterend", res.error.message)
+      }
+    })
+  }
 })
