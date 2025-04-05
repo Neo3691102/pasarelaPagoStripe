@@ -10,7 +10,7 @@ main{
     }
 
     .sneakers{
-        @include flex();
+        @include flex(row);
         flex-wrap: wrap;
         align-items: center;
         .sneaker{
