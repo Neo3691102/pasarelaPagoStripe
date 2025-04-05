@@ -42,7 +42,28 @@ main .main__container span {
   font-weight: bold;
 }
 main .sneakers {
-  @incl;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+main .sneakers .sneaker {
+  background: trnasparent;
+  text-align: center;
+  cursor: pointer;
+  min-width: 19.375rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-out;
+}
+main .sneakers .sneaker figcaption {
+  padding: 1rem;
+}
+main .sneakers .sneaker:hover {
+  transform: scale(1.1);
+}
+main .sneakers > * {
+  flex: 1 1;
 }
 
 body {
