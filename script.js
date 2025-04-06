@@ -1,4 +1,4 @@
-import KEYS from "Keys.js";
+import KEYS from "./Keys.js"; // importando las llaves de la api de stripe
 
 const $d = document;
 const $sneakers = $d.getElementById("sneakers");
@@ -50,8 +50,8 @@ $d.addEventListener("click" , e => {
         quantity: 1
         }],
         mode: "subscription",
-        successUrl: "", //direccion local
-        cancelUrl: ""
+        successUrl: "http://127.0.0.1:3369/assets/pages/success/success.html", //direccion local
+        cancelUrl: "http://127.0.0.1:3369/assets/pages/cancel/cancel.html"
     })
     .then(res => {
       if (res.error) {
