@@ -1,4 +1,6 @@
-import KEYS from "./Keys.js";
+
+import KEYS from "./Keys.js"; // importando las llaves de la api de stripe
+
 
 const $d = document;
 const $sneakers = $d.getElementById("sneakers");
@@ -20,6 +22,7 @@ Promise.all([
  
      prices.forEach(el => {
         let productData = products.filter(product => product.id === el.product);
+
          console.log(productData);
 
          $template.querySelector(".sneaker").setAttribute("data-price", el.id);
@@ -59,4 +62,5 @@ Promise.all([
      })
    }
  })
+
 

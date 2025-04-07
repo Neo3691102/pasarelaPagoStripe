@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: red;
+  max-height: 100vh;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body .cancelcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15% 0;
+}
+body .cancelcontainer img {
+  width: 6.25rem;
+}
+body .cancelcontainer p {
+  font-size: 2.0625rem;
+}
+body .cancelcontainer a {
+  text-decoration: none;
+  color: white;
+}
+body .cancelcontainer a:hover {
+  color: black;
+}/*# sourceMappingURL=cancel.css.map */
