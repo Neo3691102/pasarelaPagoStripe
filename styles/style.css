@@ -48,7 +48,7 @@ main .sneakers {
   align-items: center;
 }
 main .sneakers .sneaker {
-  background: trnasparent;
+  background: transparent;
   text-align: center;
   cursor: pointer;
   min-width: 19.375rem;
