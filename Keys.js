@@ -1,6 +1,6 @@
 export default {
 
-    public: "cpublica",
-    secret: "cprueba"
+    public: "cpub",
+    secret: "csec"
 }
 
